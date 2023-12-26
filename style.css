@@ -1,148 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
 
-:root{
-    --font:'Work Sans', sans-serif;
-    --white:  hsl(0, 0%, 100%);
-    --light-pink: hsl(275, 100%, 97%);
-    --grayish-purple: hsl(292, 16%, 49%);
-    --dark-purple: hsl(292, 42%, 14%);
+:root {
+  --font: "Work Sans", sans-serif;
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
 }
 
 /*     GERAIS     */
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-body{
-    height: 100vh;
-    font-family: var(--font);
-    font-size: 16px;
-    background-image: url(assets/images/background-pattern-mobile.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: var(--light-pink);
+body {
+  height: 100vh;
+  font-family: var(--font);
+  font-size: 16px;
+  background-image: url(assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--light-pink);
 }
 
 /*     SECTION     */
 
-.accordion-container{
-    margin: 140px 30px 30px 30px;
-    background-color: var(--white);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.384);
+.accordion-container {
+  margin: 140px 30px 30px 30px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.384);
 }
 
-.title{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 30px;
+.title {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
-h1{
-    font-size: 35px;
-    color: var(--dark-purple);
+h1 {
+  font-size: 35px;
+  color: var(--dark-purple);
 }
 
-.icon-star{
-    width: 30px;
+.icon-star {
+  width: 30px;
 }
 
-.container{
-    margin-top: 10px;
-    display: grid;
-    grid-template-areas: 'h2 icone' 'p p';
-    grid-template-columns: 4fr 1fr;
-    align-items: center;
+.container {
+  margin-top: 10px;
+  display: grid;
+  grid-template-areas: "h2 icone" "p p";
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
 }
 
-.icon-plus{
-    grid-area: icone;
-    justify-self: center;
-    cursor: pointer;
+.icon {
+  grid-area: icone;
+  justify-self: center;
+  cursor: pointer;
 }
 
-.icon-minus{
-    grid-area: icone;
-    justify-self: center;
-    cursor: pointer;
+h2 {
+  grid-area: h2;
+  font-size: 17px;
+  color: var(--dark-purple);
 }
 
-h2{
-    grid-area: h2;
-    font-size: 17px;
-    color: var(--dark-purple);
+p {
+  grid-area: p;
+  color: var(--grayish-purple);
 }
 
-p{
-    grid-area: p;
-    color: var(--grayish-purple);
+hr {
+  height: 1px;
+  background-color: var(--light-pink);
+  opacity: 0.3;
+  margin: 20px 0px;
 }
 
-hr{
-    height: 1px;
-    background-color: var(--light-pink);
-    opacity: .3;
-    margin: 20px 0px;
+.paragraph {
+  margin-top: 20px;
+  display: none;
 }
 
-.paragraph{
-    margin-top: 20px;
-    display: none;
-}
-
-.on{
-    display: block;
+.on {
+  display: block;
 }
 
 /*     FOOTER     */
 
 .attribution {
-    font-size: 11px;
-    text-align: center;
-  }
+  font-size: 11px;
+  text-align: center;
+  margin-top: 100px;
+}
 
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
 /*     MEDIA QUERY     */
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    body{
-        background-image: url(assets/images/background-pattern-desktop.svg);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }    
+  .accordion-container {
+    padding: 40px;
+    max-width: 600px;
+    margin-top: 100px;
+  }
 
-    .accordion-container{
-        padding: 40px;
-        max-width: 600px;
-        margin-top: 100px;
-    }
+  .container {
+    grid-template-columns: 5fr 1fr;
+  }
 
-    .container{
-        grid-template-columns: 5fr 1fr;
-    }
-    
-    .title{
-        margin-bottom: 40px;
-    }
-    
-    h1{
-        font-size: 50px;
-    }
+  .title {
+    margin-bottom: 40px;
+  }
 
-    h2{
-        font-size: 18px;
-    }
+  h1 {
+    font-size: 50px;
+  }
 
+  h2 {
+    font-size: 18px;
+  }
 }
-
