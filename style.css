@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
-
+ 
 :root {
   --font: "Work Sans", sans-serif;
   --white: hsl(0, 0%, 100%);
   --light-pink: hsl(275, 100%, 97%);
   --grayish-purple: hsl(292, 16%, 49%);
+  --purple: hsl(293, 56%, 52%); 
   --dark-purple: hsl(292, 42%, 14%);
 }
 
@@ -54,26 +55,57 @@ h1 {
 
 .container {
   margin-top: 10px;
-  display: grid;
-  grid-template-areas: "h2 icone" "p p";
-  grid-template-columns: 4fr 1fr;
-  align-items: center;
 }
 
-.icon {
-  grid-area: icone;
-  justify-self: center;
+.question{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2:hover{
+  color: var(--purple);
   cursor: pointer;
 }
 
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease-in-out;
+}
+
+.container.active .answer{
+  max-height: 500px;
+  animation: fade 1s ease-in-out;
+}
+
+.icon {
+  cursor: pointer;
+  background-image: url(assets/images/icon-plus.svg);
+  width: 30px;
+  height: 30px;
+}
+
+.icon-change{
+  animation: change-minus 1s ease-in-out forwards;
+}
+
+@keyframes change-minus{
+  from{
+    background-image: url(assets/images/icon-plus.svg);
+  }
+  to {
+    background-image: url(assets/images/icon-minus.svg);
+  }
+}
+
 h2 {
-  grid-area: h2;
   font-size: 17px;
   color: var(--dark-purple);
 }
 
-p {
-  grid-area: p;
+.answer p {
+  margin-top: 20px;
   color: var(--grayish-purple);
 }
 
@@ -84,14 +116,17 @@ hr {
   margin: 20px 0px;
 }
 
-.paragraph {
-  margin-top: 20px;
-  display: none;
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
-.on {
-  display: block;
-}
 
 /*     FOOTER     */
 

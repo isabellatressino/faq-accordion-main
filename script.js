@@ -1,27 +1,13 @@
-const paragraphs = document.querySelectorAll(".paragraph");
+const questions = document.querySelectorAll("h2");
+const containers = document.querySelectorAll(".container");
 const icons = document.querySelectorAll(".icon");
 
-const flag = [false, true, true, true];
+containers[0].classList.add("active");
+icons[0].classList.add("icon-change");
 
-paragraphs[0].style.display = "block";
-icons[0].src = "assets/images/icon-minus.svg";
-
-icons.forEach(function (icon, index) {
-  icon.addEventListener("click", function () {
-    paragraphs.forEach(function (p) {
-      p.style.display = "none";
-    });
-
-    icons.forEach(function (i, iIndex) {
-      i.src = "assets/images/icon-plus.svg";
-
-      if (index === iIndex && flag[index]) {
-        i.src = "assets/images/icon-minus.svg";
-        paragraphs[index].style.display = "block";
-        flag[index] = false;
-      } else {
-        flag[iIndex] = true;
-      }
-    });
+questions.forEach(function (question, i) {
+  question.addEventListener("click", function () {
+    containers[i].classList.toggle("active");
+    icons[i].classList.toggle("icon-change");
   });
 });
