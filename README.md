@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/faq-accordion-main-bCuONBVsZq](https://www.frontendmentor.io/solutions/faq-accordion-main-bCuONBVsZq)
+- Live Site URL: [https://isabellatressino.github.io/faq-accordion-main/](https://isabellatressino.github.io/faq-accordion-main/)
 
 ## My process
 
@@ -46,6 +46,7 @@ Users should be able to:
 
 ### What I learned
 
+- CSS
 ```css
 .ativo {
   animation: abrir 1s forwards;
@@ -61,6 +62,8 @@ Users should be able to:
   }
 }
 ```
+
+-JavsScript
 ```js
 let classe = Array(answer.length).fill("inativo");
 ```
