@@ -1,13 +1,30 @@
-const questions = document.querySelectorAll("h2");
-const containers = document.querySelectorAll(".container");
+const questions = document.querySelectorAll(".question");
+const answer = document.querySelectorAll(".answer");
 const icons = document.querySelectorAll(".icon");
 
-containers[0].classList.add("active");
-icons[0].classList.add("icon-change");
+let classe = Array(answer.length).fill("inativo");
+classe[0] = "ativo";
 
-questions.forEach(function (question, i) {
+icons[0].classList.add("icon-minus");
+
+questions.forEach(function (question, index) {
   question.addEventListener("click", function () {
-    containers[i].classList.toggle("active");
-    icons[i].classList.toggle("icon-change");
+    abrirContainer(index);
   });
 });
+
+function abrirContainer(i) {
+  if (classe[i] === "inativo") {
+    answer[i].classList.remove("inativo");
+    answer[i].classList.add("ativo");
+    icons[i].classList.remove("icon-plus");
+    icons[i].classList.add("icon-minus");
+    classe[i] = "ativo";
+  } else {
+    answer[i].classList.remove("ativo");
+    answer[i].classList.add("inativo");
+    icons[i].classList.remove("icon-minus");
+    icons[i].classList.add("icon-plus");
+    classe[i] = "inativo";
+  }
+}
