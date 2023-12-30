@@ -63,7 +63,7 @@ Users should be able to:
 }
 ```
 
--JavsScript
+- JavsScript
 ```js
 let classe = Array(answer.length).fill("inativo");
 ```
